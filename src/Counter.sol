@@ -1,14 +1,18 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.17;
 
-contract Counter {
-    uint256 public number;
-
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
+library Lib {
+    struct Struct {
+        uint item;
     }
 
-    function increment() public {
-        number++;
+    function takesStruct(Struct calldata _data) external {}
+}
+
+contract Contract {
+    struct Struct {
+        uint item;
     }
+
+    function takesStruct(Struct calldata _data) external {}
 }
